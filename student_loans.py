@@ -56,9 +56,22 @@ def parse_html(html):
 
 
 def handle_disbursement_ul(ul):
+    colon_regex = re.compile(r'(:\s)([\w\s.]+)')
+    date_regex = re.compile(r'\d+/\d+/\d+')
+    
     lis = ul.find_all("li")
-    for li in lis:
-        print(li.text)
+    date_lis = [lis[0], lis[5]]
+    text_lis = lis[1:5]
+
+    for li in date_lis:
+        match_object = date_regex.search(li.text)
+        # print(li.text)
+        print(match_object.group())
+
+    for li in text_lis:
+        match_object = colon_regex.search(li.text)
+        # print(li.text)
+        print(match_object.group(2).title())
 
 
 def get_data():
