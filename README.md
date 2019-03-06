@@ -12,8 +12,7 @@
     - handle_uls(uls_dict)
     - handle_###_uls(uls, data)
     - handle_###_ul(ul, data)
-- create_dictionaries.py
-    - create_data_dict()
+- create_data_dict()
         - data = {
             'Loan Status' : [],
             'Disbursement Data' : [],
@@ -22,5 +21,4 @@
             .
             'Days Delinquent' : []
         }
-    - create_uls_dict()
 
