@@ -8,7 +8,6 @@ from regex import money_regex
 def handle_loan_balance_uls(uls, data):
     for ul in uls:
         handle_loan_balance_ul(ul, data)
-    pprint(data, indent=2)
 
 def handle_loan_balance_ul(ul, data):
     lis = ul.find_all("li")

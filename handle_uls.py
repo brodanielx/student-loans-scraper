@@ -25,4 +25,6 @@ def handle_uls(uls_dict):
     handle_interest_rate_uls(interest_rate_uls, data)
     handle_loan_balance_uls(loan_balance_uls, data)
 
+    return data
+
 

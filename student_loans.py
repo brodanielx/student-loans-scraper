@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import pandas as pd
+from pprint import pprint
 import os
 
 from credentials import FEDLOAN_USERNAME, FEDLOAN_PASSWORD
@@ -68,7 +69,9 @@ def get_uls(html):
 def get_data():
     html = get_html()
     uls_dict = get_uls(html)
-    handle_uls(uls_dict)
+    data = handle_uls(uls_dict)
+    data_frame = pd.DataFrame(data)
+    print(data_frame)
 
 
 if __name__ == '__main__':

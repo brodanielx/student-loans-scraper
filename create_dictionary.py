@@ -15,9 +15,9 @@ def create_data_dictionary():
             'Original Balance' : [],
             'Unpaid Interest' : [],
             'Principal Balance' : [],
-            'Monthly Payment' : [],
-            'Repayment Term' : [],
-            'Expected Payoff Date' : [],
-            'Next Due Date' : [],
-            'Days Delinquent' : []
+            # 'Monthly Payment' : [],
+            # 'Repayment Term' : [],
+            # 'Expected Payoff Date' : [],
+            # 'Next Due Date' : [],
+            # 'Days Delinquent' : []
         }
