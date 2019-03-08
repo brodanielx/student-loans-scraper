@@ -9,7 +9,6 @@ from regex import colon_regex, date_regex
 def handle_disbursement_uls(uls, data):
     for ul in uls:
         handle_disbursement_ul(ul, data)
-    pprint(data, indent=2)
 
 def handle_disbursement_ul(ul, data):
     lis = ul.find_all("li")

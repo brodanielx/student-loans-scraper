@@ -1,0 +1,26 @@
+from bs4 import BeautifulSoup
+from pprint import pprint
+import re
+
+from regex import money_regex
+
+
+def handle_loan_balance_uls(uls, data):
+    for ul in uls:
+        handle_loan_balance_ul(ul, data)
+    pprint(data, indent=2)
+
+def handle_loan_balance_ul(ul, data):
+    lis = ul.find_all("li")
+
+    for i, li in enumerate(lis):
+        match_object = money_regex.search(li.text)
+        string_with_no_comma = match_object.group(2).replace(',','')
+        float_value = float(string_with_no_comma)
+
+        if i == 0:
+            data['Original Balance'].append(float_value)
+        elif i == 1:
+            data['Unpaid Interest'].append(float_value)
+        elif i == 2:
+            data['Principal Balance'].append(float_value)
