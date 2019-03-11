@@ -18,8 +18,8 @@ def handle_loan_balance_ul(ul, data):
         float_value = float(string_with_no_comma)
 
         if i == 0:
-            data['Original Balance'].append(float_value)
+            data['original_balance'].append(float_value)
         elif i == 1:
-            data['Unpaid Interest'].append(float_value)
+            data['unpaid_interest'].append(float_value)
         elif i == 2:
-            data['Principal Balance'].append(float_value)
+            data['principal_balance'].append(float_value)

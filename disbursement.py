@@ -14,19 +14,19 @@ def handle_disbursement_ul(ul, data):
     lis = ul.find_all("li")
 
     disbursement_date_match_object = date_regex.search(lis[0].text)
-    data['Disbursement Date'].append(disbursement_date_match_object.group())
+    data['disbursement_date'].append(disbursement_date_match_object.group())
 
     loan_program_match_object = colon_regex.search(lis[1].text)
-    data['Loan Program'].append(loan_program_match_object.group(2).title())
+    data['loan_program'].append(loan_program_match_object.group(2).title())
 
     owner_match_object = colon_regex.search(lis[2].text)
-    data['Owner'].append(owner_match_object.group(2).title())
+    data['owner'].append(owner_match_object.group(2).title())
 
     guarantor_match_object = colon_regex.search(lis[3].text)
-    data['Guarantor'].append(guarantor_match_object.group(2).title())
+    data['guarantor'].append(guarantor_match_object.group(2).title())
 
     school_match_object = colon_regex.search(lis[4].text)
-    data['School'].append(school_match_object.group(2).title())
+    data['school'].append(school_match_object.group(2).title())
 
     out_of_school_date_match_object = date_regex.search(lis[5].text)
-    data['Out of School Date'].append(out_of_school_date_match_object.group())
+    data['out_of_school_date'].append(out_of_school_date_match_object.group())

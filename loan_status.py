@@ -14,4 +14,4 @@ def handle_loan_status_ul(ul, data):
     li = ul.find("li")
     match_object = colon_regex.search(li.text)
     data_str = match_object.group(2).title()
-    data['Loan Status'].append(data_str)
+    data['loan_status'].append(data_str)

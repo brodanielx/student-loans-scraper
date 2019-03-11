@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
 import pandas as pd
 from pprint import pprint
 import os
@@ -43,8 +44,6 @@ def get_html():
 
 def get_uls(html):
     soup = BeautifulSoup(html, 'html.parser')
-    loan_header_divs = soup.find_all("div", class_="loanHeader")
-    number_of_loans = len(loan_header_divs)
 
     loan_status_uls = soup.find_all("ul", title="Loan Status")
     disbursement_uls = soup.find_all("ul", title="Disbursement Information")  
@@ -53,7 +52,6 @@ def get_uls(html):
     payment_uls = soup.find_all("ul", title="Payment Information") 
     due_date_uls = soup.find_all("ul", title="Due Date Information")
 
-#     handle_disbursement_ul(disbursement_uls[0])
     uls = {}
     uls['Loan Status'] = loan_status_uls
     uls['Disbursement'] = disbursement_uls
@@ -65,13 +63,31 @@ def get_uls(html):
     return uls
 
 
+def create_data_frame(data_dict):
+    data_length = len(data_dict['loan_status'])
+    index = list(range(1, data_length + 1))
+    data_frame = pd.DataFrame(data_dict, index=index)
+    return data_frame
+
+def create_plots(data_frame):
+    plot_interest_rates(data_frame)
+
+def plot_interest_rates(data_frame):
+    bar_graph = data_frame[['interest_rate']].plot(kind='bar')
+    plt.title('Interest Rates')
+    plt.xlabel('Loans')
+    plt.ylabel('%')
+    plt.show()
+
+
+
 
 def get_data():
     html = get_html()
     uls_dict = get_uls(html)
     data = handle_uls(uls_dict)
-    data_frame = pd.DataFrame(data)
-    print(data_frame)
+    data_frame = create_data_frame(data)
+    create_plots(data_frame)
 
 
 if __name__ == '__main__':

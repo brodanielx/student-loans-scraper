@@ -15,8 +15,8 @@ def handle_uls(uls_dict):
     disbursement_uls = uls_dict['Disbursement']
     interest_rate_uls = uls_dict['Interest Rate']
     loan_balance_uls = uls_dict['Loan Balance']
-    payment_uls = uls_dict['Payment']
-    due_date_uls = uls_dict['Due Date']
+    # payment_uls = uls_dict['Payment']
+    # due_date_uls = uls_dict['Due Date']
 
     data = create_data_dictionary()
 
