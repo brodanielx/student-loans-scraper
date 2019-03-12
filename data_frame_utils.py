@@ -17,7 +17,7 @@ def create_data_frame(data_dict):
 
 def create_plots(data_frame):
     plot_interest_rates(data_frame)
-    plot_principal_balances(data_frame)
+    # plot_principal_balances(data_frame)
     plt.show()
 
 def plot_interest_rates(data_frame):
