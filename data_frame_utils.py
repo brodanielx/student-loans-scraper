@@ -1,10 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
-import matplotlib.pyplot as plt
 import pandas as pd
 from pprint import pprint
 import os
+
+from sys import platform as sys_pf
+if sys_pf == 'darwin':
+    import matplotlib
+    matplotlib.use("TkAgg")
+import matplotlib.pyplot as plt
+
 
 
 
