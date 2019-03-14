@@ -1,11 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from bs4 import BeautifulSoup
-import matplotlib.pyplot as plt
-import pandas as pd
-from pprint import pprint
-import os
-
 from data_frame_utils import create_csv, create_data_frame, create_plots
 from get_html import get_html, get_uls
 from handle_uls import handle_uls
