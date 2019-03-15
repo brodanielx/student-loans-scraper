@@ -2,9 +2,9 @@
 
 
 # ToDo
-- use pd.DataFrame
-- handle_uls.py
-    - handle_uls(uls_dict)
-    - handle_###_uls(uls, data)
-    - handle_###_ul(ul, data)
+- get ESCI data 
+    - get html
+    - handle html
+        - html table to DataFrame
+    - add to data dictionary
 

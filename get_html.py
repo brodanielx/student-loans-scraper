@@ -12,7 +12,6 @@ def get_html():
 
     url = "https://myfedloan.org/"
     driver = webdriver.Chrome()
-    # driver.implicitly_wait(30)
     driver.get(url)
 
     sign_in_button = driver.find_element_by_class_name("flyout-control")
